@@ -42,7 +42,7 @@ from noflash_attention.ffn import (
 )
 
 __all__ = [
-    # v10 SDPA (unchanged)
+    # SDPA patch
     "__version__",
     "enable",
     "disable",

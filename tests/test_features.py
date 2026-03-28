@@ -1,4 +1,4 @@
-"""v9 Feature tests — forward-compat kwargs, GQA, autograd, NaN guard,
+"""Feature tests — forward-compat kwargs, GQA, autograd, NaN guard,
 autocast, disable/enable, regressions, stability, and real LLM.
 25 tests total."""
 import time

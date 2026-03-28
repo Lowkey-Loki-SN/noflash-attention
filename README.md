@@ -235,7 +235,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
 3. Start ComfyUI. The SDPA patch activates automatically on startup. You'll see:
    ```
-   [noflash-attn] v1.0.0 — SDPA patched (three-tier chunked attention)
+   [noflash-attn] v1.0.1 — SDPA patched (three-tier chunked attention)
    ```
 
 4. **FFN Chunking** (optional): Add the `NoFlash FFN Chunking` node to your workflow for additional memory savings on feedforward layers.

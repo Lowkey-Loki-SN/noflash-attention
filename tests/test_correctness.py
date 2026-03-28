@@ -1,5 +1,5 @@
 """
-Comprehensive correctness test suite for gfx906 SDPA patch.
+Correctness test suite for noflash-attention SDPA patch.
 Every test compares OUTPUT VALUES against a reference (Math SDPA or manual).
 Not just "doesn't crash" — actual numerical verification.
 """

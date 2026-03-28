@@ -14,7 +14,7 @@ if sys.version_info[:2] >= (3, 10):
     except ImportError:
         print("[noflash-attn] Package not installed. Run: pip install -e /path/to/noflash-attention")
 else:
-    print("[noflash-attn] Skipping — Python < 3.12")
+    print("[noflash-attn] Skipping — Python < 3.10")
 
 
 class NoFlashFFNChunking:

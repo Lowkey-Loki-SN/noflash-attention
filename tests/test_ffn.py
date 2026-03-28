@@ -1,5 +1,5 @@
 """
-FFN Chunking Test Suite for chunked-attn-gfx906 v11
+FFN Chunking Test Suite for noflash-attention
 
 Tests:
   1. Detection (CPU) — structural pre-filter correctness
