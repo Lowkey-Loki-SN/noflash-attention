@@ -6,7 +6,7 @@ Requires: pip install -e /path/to/noflash-attention
 """
 import sys
 
-if sys.version_info[:2] >= (3, 12):
+if sys.version_info[:2] >= (3, 10):
     try:
         import noflash_attention
         import os
