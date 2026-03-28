@@ -5,3 +5,5 @@ dist/
 build/
 *.egg
 .eggs/
+bench_triton_gemm.py
+tests/bench_*.py

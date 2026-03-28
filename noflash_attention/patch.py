@@ -16,7 +16,7 @@ import os
 
 from noflash_attention.detect_gpu import should_activate
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 # Support both new and legacy env var names (backward compat)
 _threshold_str = os.environ.get("NOFLASH_THRESHOLD",
@@ -102,7 +102,7 @@ def _qk_matmul(q_chunk, K_t, H_q, H_kv, B, chunk_len, N_kv):
     """QK^T matmul with adaptive GQA. Returns (B, H_q, chunk_len, N_kv).
     Uses flattened GEMM when G*chunk_len is large enough to benefit from reduced
     batch overhead; falls back to broadcast for smaller sizes where batched
-    GEMMs are more efficient on MI50's Tensile scheduler."""
+    GEMMs are more efficient with fewer, larger matmuls."""
     if H_kv == H_q:
         return torch.matmul(q_chunk, K_t)
     G = H_q // H_kv
@@ -339,7 +339,7 @@ def patched_sdpa(query, key, value, attn_mask=None, dropout_p=0.0,
 
         # Disable autocast inside our path — we manage dtypes explicitly.
         # Without this, autocast recasts our FP16 tensors to BF16 inside matmul,
-        # which crashes on gfx906 (no BF16 hardware).
+        # which crashes on GPUs without native BF16 hardware.
         with torch.amp.autocast(device_type="cuda", enabled=False):
 
             # --- Fast path: decode / tiny seq_q → Math SDPA (fused C++ kernel) ---
