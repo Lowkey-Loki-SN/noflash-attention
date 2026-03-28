@@ -4,11 +4,25 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "noflash-attention"
-version = "1.0.0"
+version = "1.0.1"
 description = "Flash-attention-class memory efficiency for GPUs without flash attention"
+readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 dependencies = ["torch>=2.0"]
+keywords = ["attention", "flash-attention", "sdpa", "memory-efficient", "amd", "rocm", "gfx906", "rdna", "pytorch"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://github.com/Lowkey-Loki-SN/noflash-attention"
+Repository = "https://github.com/Lowkey-Loki-SN/noflash-attention"
+Issues = "https://github.com/Lowkey-Loki-SN/noflash-attention/issues"
 
 [tool.setuptools.packages.find]
 include = ["noflash_attention*"]
